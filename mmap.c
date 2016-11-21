@@ -64,11 +64,6 @@ void removeRangeOccurance( size_t hint, size_t sz )
 // Garbage Collection Procedure
 void GC(pid_t pid)
 {
-#ifdef BRK_ON
-    onInit(pid, INIT_EXPAND);
-    return;
-#endif
-
     size_t page, ref;
     size_t idx;
     releaseRange(0, 0, GC_SKIPTRY);
